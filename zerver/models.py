@@ -3180,6 +3180,12 @@ class AbstractUserMessage(models.Model):
         return "flags & 1 = 0"
 
     @staticmethod
+    def where_read() -> str:
+        # It is likely that this operation doesn't have an index. So,
+        # use this only for queries where another good index is present.
+        return "flags & 1 <> 0"
+
+    @staticmethod
     def where_starred() -> str:
         # Use this for Django ORM queries to access starred messages.
         # This custom SQL plays nice with our partial indexes.  Grep

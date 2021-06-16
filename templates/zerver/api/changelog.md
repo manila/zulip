@@ -20,6 +20,11 @@ format used by the Zulip server that they are interacting with.
 
 ## Changes in Zulip 6.0
 
+**Feature level 126**
+
+* [`GET /messages/{message_id}/read_receipts`](/api/get-read-receipts):
+  Added new endpoint to fetch read receipts for a message.
+
 **Feature level 125**
 
 * [`POST /register`](/api/register-queue), [`PATCH
