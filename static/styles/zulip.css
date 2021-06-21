@@ -665,6 +665,62 @@ strong {
     display: none;
 }
 
+#read_receipts_modal {
+    .showing_read_receipts_list {
+        min-height: 30vh;
+        max-height: 50vh;
+
+        .modal__content {
+            /* When showing read receipts, we use simplebar
+            to make the list scrollable.  It requires this to
+            be flex. */
+            display: flex;
+        }
+    }
+
+    .modal__container {
+        width: 50vh;
+    }
+
+    .modal__header {
+        padding-bottom: 0;
+    }
+
+    hr {
+        margin: 10px 0;
+    }
+
+    .modal__content {
+        padding: 0 24px 8px;
+    }
+
+    .loading_indicator {
+        margin: auto;
+    }
+
+    #read_receipts_list {
+        margin-left: 0;
+
+        li {
+            .read_receipts_user_avatar {
+                display: inline-block;
+                height: 20px;
+                width: 20px;
+                position: relative;
+                right: 8px;
+                border-radius: 4px;
+            }
+
+            margin: 5px 0;
+            list-style-type: none;
+            overflow-x: hidden;
+            padding-left: 10px;
+            white-space: nowrap;
+            text-overflow: ellipsis;
+        }
+    }
+}
+
 /* .dropdown-menu from v2.3.2
    + https://github.com/zulip/zulip/commit/7a3a3be7e547d3e8f0ed00820835104867f2433d
    basic idea of this fix is to remove decorations from :hover and apply them only
@@ -937,6 +993,15 @@ td.pointer {
     }
 
     > .reaction_button {
+        &:hover {
+            color: hsl(200, 100%, 40%);
+        }
+    }
+
+    > .view_read_receipts {
+        font-size: 14px;
+        height: 16px;
+
         &:hover {
             color: hsl(200, 100%, 40%);
         }

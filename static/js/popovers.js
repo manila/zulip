@@ -40,6 +40,7 @@ import * as overlays from "./overlays";
 import {page_params} from "./page_params";
 import * as people from "./people";
 import * as popover_menus from "./popover_menus";
+import * as read_receipts from "./read_receipts";
 import * as realm_playground from "./realm_playground";
 import * as reminder from "./reminder";
 import * as resize from "./resize";
@@ -1254,6 +1255,14 @@ export function register_click_handlers() {
 
         hide_actions_popover();
         muted_topics_ui.unmute_topic(stream_id, topic);
+        e.stopPropagation();
+        e.preventDefault();
+    });
+
+    $("body").on("click", ".view_read_receipts", (e) => {
+        const message_id = $(e.currentTarget).data("message-id");
+        hide_actions_popover();
+        read_receipts.show_user_list(message_id);
         e.stopPropagation();
         e.preventDefault();
     });
