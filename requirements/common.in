@@ -4,6 +4,7 @@
 # See requirements/README.md for more detail.
 # Django itself
 Django[argon2]==3.2.*
+https://github.com/django/asgiref/archive/5a4911b6d8ac21568fac3fd864cf757e6ac0208b.zip#egg=asgiref==3.5.0+git1  # https://github.com/django/asgiref/pull/320
 
 # needed for Literal, TypedDict
 typing-extensions

@@ -46,10 +46,11 @@ arrow==1.2.2 \
     --hash=sha256:05caf1fd3d9a11a1135b2b6f09887421153b94558e5ef4d090b567b47173ac2b \
     --hash=sha256:d622c46ca681b5b3e3574fcb60a04e5cc81b9625112d5fb2b44220c36c892177
     # via gitlint-core
-asgiref==3.5.0 \
-    --hash=sha256:2f8abc20f7248433085eda803936d98992f1343ddb022065779f37c5da0181d0 \
-    --hash=sha256:88d59c13d634dcffe0510be048210188edd79aeccb6a6c9028cdad6f31d730a9
-    # via django
+https://github.com/django/asgiref/archive/5a4911b6d8ac21568fac3fd864cf757e6ac0208b.zip#egg=asgiref==3.5.0+git1 \
+    --hash=sha256:0ac2515912dfef9b9968082dab32335e595c28c6c205999926c05852524e12cc
+    # via
+    #   -r requirements/common.in
+    #   django
 async-generator==1.10 \
     --hash=sha256:01c7bf666359b4967d2cda0000cc2e4af16a0ae098cbffcb8472fb9e8ad6585b \
     --hash=sha256:6ebb3d106c12920aaae42ccb6f787ef5eefdcdd166ea3d628fa8476abe712144
