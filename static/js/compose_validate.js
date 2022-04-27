@@ -654,6 +654,16 @@ function validate_private_message() {
     return true;
 }
 
+export function warn_if_private_messages_disabled() {
+  if (!validate_private_message() && 
+    compose_state.private_message_recipient().length > 0) {
+    $("#compose-send-button").prop("disabled", true);
+  } else {
+    $("#compose-send-button").prop("disabled", false);
+    compose_error.hide();
+  }
+}
+
 export function check_overflow_text() {
     // This function is called when typing every character in the
     // compose box, so it's important that it not doing anything
