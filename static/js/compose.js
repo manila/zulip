@@ -413,6 +413,7 @@ export function initialize() {
     $("#compose-textarea").on("input propertychange", () => {
         compose_validate.warn_if_topic_resolved(false);
         compose_validate.check_overflow_text();
+        compose_validate.warn_if_private_messages_disabled();
     });
 
     $("#compose form").on("submit", (e) => {
