@@ -659,15 +659,15 @@ export function warn_if_private_messages_disabled() {
   const compose_textarea = $("compose-textarea");
 
   if (
-    compose_state.private_message_recipient().length > 0 &&
+    compose_state.private_message_recipient().length === 0 ||
     validate_private_message()
   ) {
     compose_error.hide();
-    send_button.prop("disabled", false)
-    send_button.css("pointer-events", "");
+    $("#compose-send-button").removeClass("button_disabled");
+    $("#compose-textarea").removeClass("textarea_disabled");
   } else {
-    send_button.prop("disabled", true);
-    send_button.css("pointer-events", "none");
+    $("#compose-send-button").addClass("button_disabled");
+    $("#compose-textarea").addClass("textarea_disabled");
   }
 }
 
