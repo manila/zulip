@@ -421,6 +421,11 @@ textarea.new_message_textarea {
             animation: flash 0.5s ease-in-out infinite;
         }
     }
+
+    &.textarea_disabled {
+      opacity: 0.5;
+      pointer-events: none;
+    }
 }
 
 textarea.new_message_textarea,
@@ -483,6 +488,12 @@ input.recipient_box {
         position: relative;
         top: -6px;
     }
+
+    &.button_disabled {
+      opacity: 0.5;
+      pointer-events: none;
+    }
+
 }
 
 .enter_sends_choices {
